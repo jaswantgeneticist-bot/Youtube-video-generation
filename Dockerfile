@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Fix ImageMagick security policy to allow TextClip to render words
-RUN sed -i 's/<policy domain="path" rights="none" pattern="@\*"//g' /etc/ImageMagick-6/policy.xml
+RUN sed -i 's/<policy domain="path" rights="none" pattern="@\*"//g' /etc/ImageMagick-*/policy.xml
 
 WORKDIR /app
 COPY requirements.txt .
